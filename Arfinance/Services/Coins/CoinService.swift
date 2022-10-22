@@ -10,16 +10,17 @@ import Combine
 import SwiftUI
 
 class CoinService {
-	@Published var coins : [Coin] = [] ;
+	@Published var collection : [Coin] = [] ;
 	
 	private let fileManager = LocalFileManager.instance ;
 	private let subcriptions : Subscription = Subscription()
 	class Subscription {
 		var coin : AnyCancellable?
-		var coinLogo : AnyCancellable?
 	}
 	
-	init () {}
+	init () {
+		self.fetch()
+	}
 	
 	public func fetch () {
 		guard let url = URL(string: API.Coin.data) else {return}
@@ -28,19 +29,22 @@ class CoinService {
 			.decode(type: [Coin].self, decoder: JSONDecoder())
 			.sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: {[weak self] (coins : [Coin]) in
 				guard let self = self else {return};
-				self.coins = coins;
+				self.collection = coins;
 				self.subcriptions.coin?.cancel()
 			})
 	}
 	
 	public func fetchLogo (url : URL) async -> UIImage? {
-		if let logo : UIImage = fileManager.get(imageName: url.path.components(separatedBy: "/").last! , dirName: "coin_images") {
+		if let logo : UIImage = self.fileManager.get(imageName: url.path.components(separatedBy: "/").last! , dirName: "coin_images") {
 			return logo ;
 		}
 		
 		do {
 			let (data, _) = try await URLSession.shared.data(from: url);
 			let logo = UIImage(data: data);
+			if let logo = logo {
+				self.fileManager.save(image: logo, imageName: url.path.components(separatedBy: "/").last!, dirName: "coin_images")
+			}
 			return logo
 		} catch  {
 			print(error.localizedDescription)
@@ -48,7 +52,7 @@ class CoinService {
 		}
 	}
 	
-	public func fetchMarket (coin : Coin) async -> CoinMarket? {
+	public func fetchMarket () async -> CoinMarket? {
 		let url = URL(string: API.Coin.globalMarket)! ;
 		
 		do {

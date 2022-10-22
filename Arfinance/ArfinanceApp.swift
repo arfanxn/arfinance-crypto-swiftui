@@ -12,7 +12,8 @@ struct ArfinanceApp: App {
 
     var body: some Scene {
         WindowGroup {
-			Text("Hello world")
+			HomeView()
+				.environmentObject(HomeVM())
         }
     }
 }
