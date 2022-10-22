@@ -1,5 +1,5 @@
 //
-//  UpdateCoinPortfolioComponent.swift
+//  EditCoinPortfolioComponent.swift
 //  Arfinance
 //
 //  Created by Muhammad Arfan on 20/10/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UpdateCoinPortfolioComponent: View {
+struct EditCoinPortfolioComponent: View {
 	
 	@EnvironmentObject private var vm : HomeVM ;
 	@Environment(\.presentationMode) var presentationMode ;
@@ -121,7 +121,7 @@ struct UpdateCoinPortfolioComponent: View {
 	}
 }
 
-struct UpdateCoinPortfolioComponent_Previews: PreviewProvider {
+struct EditCoinPortfolioComponent_Previews: PreviewProvider {
 	static var previews: some View {
 		Text("Hello")
 	}

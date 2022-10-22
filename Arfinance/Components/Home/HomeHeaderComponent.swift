@@ -14,7 +14,7 @@ struct HomeHeaderComponent: View {
 		HStack{
 			CircleButtonComponent(iconName: self.vm.showPortfolio ? "plus" : "info" , animate: self.$vm.showPortfolio)
 				.sheet(isPresented: self.$vm.showPortfolioSheet, content: {
-					UpdateCoinPortfolioComponent()
+					EditCoinPortfolioComponent()
 				})
 				.onTapGesture {
 					if (self.vm.showPortfolio) {
