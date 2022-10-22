@@ -63,6 +63,8 @@ struct HomeView: View {
 				.sheet(isPresented: self.$showCoinDetail) {
 					if let coin = self.selectedCoin  {
 						CoinDetailView(coin: coin)
+					} else {
+						Text("Please reopen")
 					}
 				}
 				

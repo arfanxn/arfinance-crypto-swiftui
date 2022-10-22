@@ -65,10 +65,10 @@ struct UpdateCoinPortfolioComponent: View {
 							}
 						}
 						.withoutAnimation()
-						.padding()
 						.font(.headline)
 					}
 				}
+				.padding(.all)
 			}
 			.navigationTitle("Edit portfolio")
 			.toolbar(content: {

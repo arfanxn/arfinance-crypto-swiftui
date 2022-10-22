@@ -192,11 +192,11 @@
 		8BCE03322903AA370084DFA9 /* Arfinance */ = {
 			isa = PBXGroup;
 			children = (
-				8B9C6FCC2904220F0076555D /* CoreData */,
 				8BCE03332903AA370084DFA9 /* ArfinanceApp.swift */,
 				8B9C6FB92903DA2C0076555D /* Assets.xcassets */,
 				8BCE03632903AA770084DFA9 /* Components */,
 				8BCE03692903AAAF0084DFA9 /* Containers */,
+				8B9C6FCC2904220F0076555D /* CoreData */,
 				8BCE036D2903AC690084DFA9 /* Enums */,
 				8BCE03672903AAA10084DFA9 /* Extensions */,
 				8BCE03682903AAA70084DFA9 /* Helpers */,
