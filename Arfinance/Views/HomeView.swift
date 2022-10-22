@@ -23,12 +23,14 @@ struct HomeView: View {
 			Color.theme.background.ignoresSafeArea()
 			
 			VStack{
-				HomeHeaderComponent().environmentObject(vm)
+				HomeHeaderComponent()
+					.padding()
+					.environmentObject(vm)
 				
 				CoinStatisticHighlightComponent(coinStatistics: .constant(self.vm.coinStatistics))
 				
 				SearchBarComponent(keyword: self.$vm.keyword)
-					.padding(.horizontal)
+					.padding(.all , 6)
 				
 				HStack{
 					SortButtonComponent(title: "Coin", chevronDirection: self.$sortChevronDirection) { chevronDirection in
