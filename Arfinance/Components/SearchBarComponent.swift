@@ -40,7 +40,6 @@ struct SearchBarComponent: View {
 				.fill(Color.theme.background)
 				.shadow(color: .theme.accent.opacity(0.15), radius: 10)
 		)
-		.padding(.all)
 	}
 }
 

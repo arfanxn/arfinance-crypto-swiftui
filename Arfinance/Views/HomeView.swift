@@ -28,6 +28,7 @@ struct HomeView: View {
 				CoinStatisticHighlightComponent(coinStatistics: .constant(self.vm.coinStatistics))
 				
 				SearchBarComponent(keyword: self.$vm.keyword)
+					.padding(.horizontal)
 				
 				HStack{
 					SortButtonComponent(title: "Coin", chevronDirection: self.$sortChevronDirection) { chevronDirection in
