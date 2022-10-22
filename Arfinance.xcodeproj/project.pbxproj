@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BCE03342903AA370084DFA9 /* ArfinanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCE03332903AA370084DFA9 /* ArfinanceApp.swift */; };
+		8BCE03362903AA370084DFA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCE03352903AA370084DFA9 /* ContentView.swift */; };
+		8BCE03382903AA380084DFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCE03372903AA380084DFA9 /* Assets.xcassets */; };
+		8BCE033B2903AA380084DFA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCE033A2903AA380084DFA9 /* Preview Assets.xcassets */; };
+		8BCE033D2903AA380084DFA9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCE033C2903AA380084DFA9 /* Persistence.swift */; };
+		8BCE03402903AA380084DFA9 /* Arfinance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BCE033E2903AA380084DFA9 /* Arfinance.xcdatamodeld */; };
+		8BCE034A2903AA380084DFA9 /* ArfinanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCE03492903AA380084DFA9 /* ArfinanceTests.swift */; };
+		8BCE03542903AA380084DFA9 /* ArfinanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCE03532903AA380084DFA9 /* ArfinanceUITests.swift */; };
+		8BCE03562903AA380084DFA9 /* ArfinanceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCE03552903AA380084DFA9 /* ArfinanceUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8BCE03462903AA380084DFA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BCE03282903AA370084DFA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BCE032F2903AA370084DFA9;
+			remoteInfo = Arfinance;
+		};
+		8BCE03502903AA380084DFA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BCE03282903AA370084DFA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BCE032F2903AA370084DFA9;
+			remoteInfo = Arfinance;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8BCE03302903AA370084DFA9 /* Arfinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arfinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BCE03332903AA370084DFA9 /* ArfinanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArfinanceApp.swift; sourceTree = "<group>"; };
+		8BCE03352903AA370084DFA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8BCE03372903AA380084DFA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BCE033A2903AA380084DFA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8BCE033C2903AA380084DFA9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		8BCE033F2903AA380084DFA9 /* Arfinance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Arfinance.xcdatamodel; sourceTree = "<group>"; };
+		8BCE03452903AA380084DFA9 /* ArfinanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArfinanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BCE03492903AA380084DFA9 /* ArfinanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArfinanceTests.swift; sourceTree = "<group>"; };
+		8BCE034F2903AA380084DFA9 /* ArfinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArfinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BCE03532903AA380084DFA9 /* ArfinanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArfinanceUITests.swift; sourceTree = "<group>"; };
+		8BCE03552903AA380084DFA9 /* ArfinanceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArfinanceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BCE032D2903AA370084DFA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCE03422903AA380084DFA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCE034C2903AA380084DFA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BCE03272903AA370084DFA9 = {
+			isa = PBXGroup;
+			children = (
+				8BCE03322903AA370084DFA9 /* Arfinance */,
+				8BCE03482903AA380084DFA9 /* ArfinanceTests */,
+				8BCE03522903AA380084DFA9 /* ArfinanceUITests */,
+				8BCE03312903AA370084DFA9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BCE03312903AA370084DFA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BCE03302903AA370084DFA9 /* Arfinance.app */,
+				8BCE03452903AA380084DFA9 /* ArfinanceTests.xctest */,
+				8BCE034F2903AA380084DFA9 /* ArfinanceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BCE03322903AA370084DFA9 /* Arfinance */ = {
+			isa = PBXGroup;
+			children = (
+				8BCE03332903AA370084DFA9 /* ArfinanceApp.swift */,
+				8BCE03352903AA370084DFA9 /* ContentView.swift */,
+				8BCE03372903AA380084DFA9 /* Assets.xcassets */,
+				8BCE033C2903AA380084DFA9 /* Persistence.swift */,
+				8BCE033E2903AA380084DFA9 /* Arfinance.xcdatamodeld */,
+				8BCE03392903AA380084DFA9 /* Preview Content */,
+			);
+			path = Arfinance;
+			sourceTree = "<group>";
+		};
+		8BCE03392903AA380084DFA9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8BCE033A2903AA380084DFA9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8BCE03482903AA380084DFA9 /* ArfinanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BCE03492903AA380084DFA9 /* ArfinanceTests.swift */,
+			);
+			path = ArfinanceTests;
+			sourceTree = "<group>";
+		};
+		8BCE03522903AA380084DFA9 /* ArfinanceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8BCE03532903AA380084DFA9 /* ArfinanceUITests.swift */,
+				8BCE03552903AA380084DFA9 /* ArfinanceUITestsLaunchTests.swift */,
+			);
+			path = ArfinanceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BCE032F2903AA370084DFA9 /* Arfinance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BCE03592903AA380084DFA9 /* Build configuration list for PBXNativeTarget "Arfinance" */;
+			buildPhases = (
+				8BCE032C2903AA370084DFA9 /* Sources */,
+				8BCE032D2903AA370084DFA9 /* Frameworks */,
+				8BCE032E2903AA370084DFA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arfinance;
+			productName = Arfinance;
+			productReference = 8BCE03302903AA370084DFA9 /* Arfinance.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8BCE03442903AA380084DFA9 /* ArfinanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BCE035C2903AA380084DFA9 /* Build configuration list for PBXNativeTarget "ArfinanceTests" */;
+			buildPhases = (
+				8BCE03412903AA380084DFA9 /* Sources */,
+				8BCE03422903AA380084DFA9 /* Frameworks */,
+				8BCE03432903AA380084DFA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BCE03472903AA380084DFA9 /* PBXTargetDependency */,
+			);
+			name = ArfinanceTests;
+			productName = ArfinanceTests;
+			productReference = 8BCE03452903AA380084DFA9 /* ArfinanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8BCE034E2903AA380084DFA9 /* ArfinanceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BCE035F2903AA380084DFA9 /* Build configuration list for PBXNativeTarget "ArfinanceUITests" */;
+			buildPhases = (
+				8BCE034B2903AA380084DFA9 /* Sources */,
+				8BCE034C2903AA380084DFA9 /* Frameworks */,
+				8BCE034D2903AA380084DFA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BCE03512903AA380084DFA9 /* PBXTargetDependency */,
+			);
+			name = ArfinanceUITests;
+			productName = ArfinanceUITests;
+			productReference = 8BCE034F2903AA380084DFA9 /* ArfinanceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BCE03282903AA370084DFA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					8BCE032F2903AA370084DFA9 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					8BCE03442903AA380084DFA9 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 8BCE032F2903AA370084DFA9;
+					};
+					8BCE034E2903AA380084DFA9 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 8BCE032F2903AA370084DFA9;
+					};
+				};
+			};
+			buildConfigurationList = 8BCE032B2903AA370084DFA9 /* Build configuration list for PBXProject "Arfinance" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8BCE03272903AA370084DFA9;
+			productRefGroup = 8BCE03312903AA370084DFA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BCE032F2903AA370084DFA9 /* Arfinance */,
+				8BCE03442903AA380084DFA9 /* ArfinanceTests */,
+				8BCE034E2903AA380084DFA9 /* ArfinanceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BCE032E2903AA370084DFA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BCE033B2903AA380084DFA9 /* Preview Assets.xcassets in Resources */,
+				8BCE03382903AA380084DFA9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCE03432903AA380084DFA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCE034D2903AA380084DFA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BCE032C2903AA370084DFA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BCE033D2903AA380084DFA9 /* Persistence.swift in Sources */,
+				8BCE03402903AA380084DFA9 /* Arfinance.xcdatamodeld in Sources */,
+				8BCE03362903AA370084DFA9 /* ContentView.swift in Sources */,
+				8BCE03342903AA370084DFA9 /* ArfinanceApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCE03412903AA380084DFA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BCE034A2903AA380084DFA9 /* ArfinanceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCE034B2903AA380084DFA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BCE03562903AA380084DFA9 /* ArfinanceUITestsLaunchTests.swift in Sources */,
+				8BCE03542903AA380084DFA9 /* ArfinanceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8BCE03472903AA380084DFA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BCE032F2903AA370084DFA9 /* Arfinance */;
+			targetProxy = 8BCE03462903AA380084DFA9 /* PBXContainerItemProxy */;
+		};
+		8BCE03512903AA380084DFA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BCE032F2903AA370084DFA9 /* Arfinance */;
+			targetProxy = 8BCE03502903AA380084DFA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8BCE03572903AA380084DFA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8BCE03582903AA380084DFA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8BCE035A2903AA380084DFA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Arfinance/Preview Content\"";
+				DEVELOPMENT_TEAM = N4JXQZ23WC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Arfanxn.Arfinance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8BCE035B2903AA380084DFA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Arfinance/Preview Content\"";
+				DEVELOPMENT_TEAM = N4JXQZ23WC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Arfanxn.Arfinance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8BCE035D2903AA380084DFA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N4JXQZ23WC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Arfanxn.ArfinanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arfinance.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Arfinance";
+			};
+			name = Debug;
+		};
+		8BCE035E2903AA380084DFA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N4JXQZ23WC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Arfanxn.ArfinanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arfinance.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Arfinance";
+			};
+			name = Release;
+		};
+		8BCE03602903AA380084DFA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N4JXQZ23WC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Arfanxn.ArfinanceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Arfinance;
+			};
+			name = Debug;
+		};
+		8BCE03612903AA380084DFA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N4JXQZ23WC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Arfanxn.ArfinanceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Arfinance;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BCE032B2903AA370084DFA9 /* Build configuration list for PBXProject "Arfinance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCE03572903AA380084DFA9 /* Debug */,
+				8BCE03582903AA380084DFA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BCE03592903AA380084DFA9 /* Build configuration list for PBXNativeTarget "Arfinance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCE035A2903AA380084DFA9 /* Debug */,
+				8BCE035B2903AA380084DFA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BCE035C2903AA380084DFA9 /* Build configuration list for PBXNativeTarget "ArfinanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCE035D2903AA380084DFA9 /* Debug */,
+				8BCE035E2903AA380084DFA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BCE035F2903AA380084DFA9 /* Build configuration list for PBXNativeTarget "ArfinanceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCE03602903AA380084DFA9 /* Debug */,
+				8BCE03612903AA380084DFA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8BCE033E2903AA380084DFA9 /* Arfinance.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8BCE033F2903AA380084DFA9 /* Arfinance.xcdatamodel */,
+			);
+			currentVersion = 8BCE033F2903AA380084DFA9 /* Arfinance.xcdatamodel */;
+			path = Arfinance.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8BCE03282903AA370084DFA9 /* Project object */;
+}
