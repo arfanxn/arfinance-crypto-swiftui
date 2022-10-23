@@ -36,12 +36,12 @@ struct HomeView: View {
 					SortButtonComponent(title: "Coin", chevronDirection: self.$sortChevronDirection) { chevronDirection in
 						self.vm.coinSortOption = chevronDirection == .up ? .rankHighest : .rankLowest ;
 					}
+					Spacer()
 					if (self.vm.showPortfolio) {
 						SortButtonComponent(title: "Holding", chevronDirection: self.$sortChevronDirection) { chevronDirection in
 							self.vm.coinSortOption = chevronDirection == .up ? .holdingHighest : .holdingLowest ;
 						}
 					}
-					Spacer()
 					SortButtonComponent(title: "Price", chevronDirection: self.$sortChevronDirection) { chevronDirection in
 						self.vm.coinSortOption = chevronDirection == .up ? .priceHighest : .priceLowest ;
 					}
@@ -57,7 +57,7 @@ struct HomeView: View {
 							self.showCoinDetail.toggle();
 						}
 					} else {
-						CoinListComponent(coins: self.$vm.portfolioCoins ) { coin in
+						CoinListComponent(coins: self.$vm.portfolioCoins, showHoldingColumn : true) { coin in
 							self.selectedCoin = coin ;
 							self.showCoinDetail.toggle();
 						}

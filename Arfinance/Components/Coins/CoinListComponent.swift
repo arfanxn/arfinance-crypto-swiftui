@@ -11,6 +11,7 @@ struct CoinListComponent: View {
 	
 	@Binding var coins : [Coin] ;
 	var axis : AxisEnum = .vertical
+	var showHoldingColumn : Bool = false
 	let onClick : (_ coin : Coin) -> () ;
 	@State private var selectedCoin : Coin?
 	
@@ -18,7 +19,7 @@ struct CoinListComponent: View {
 		if (self.axis == .vertical) {
 			List{
 				ForEach(self.coins , id: \.id) { coin in
-					CoinRowComponent(coin: coin)
+					CoinRowComponent(coin: coin , showHoldingColumn: self.showHoldingColumn)
 						.listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
 						.onTapGesture(perform: {
 							withAnimation(.easeIn) {
