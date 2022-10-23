@@ -27,7 +27,7 @@ struct HomeView: View {
 					.padding()
 					.environmentObject(vm)
 				
-				CoinStatisticHighlightComponent(coinStatistics: .constant(self.vm.coinStatistics))
+				CoinStatisticHighlightComponent(coinStatistics: self.$vm.coinStatistics)
 				
 				SearchBarComponent(keyword: self.$vm.keyword)
 					.padding(.all , 6)

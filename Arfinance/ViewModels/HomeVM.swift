@@ -96,18 +96,7 @@ class HomeVM : ObservableObject {
 					guard let coinMarket = await self.coinService.fetchMarket() else {
 						return
 					}
-					
-					await MainActor.run {
-						self.coinStatistics.removeAll()
-						self.coinStatistics.append(contentsOf: [
-							CoinStatistic(title:  "Market cap", value: coinMarket.marketCap , percentageChange:  coinMarket.marketCapChangePercentage24HUsd),
-							CoinStatistic(title: "24H Volume", value: coinMarket.volume),
-							CoinStatistic(title: "Btc Dominance", value: "$0.00" ,
-										  percentageChange: 77.0
-										 )
-						]);
-					}
-					
+										
 					// Portfolio
 					let portfolioValue = coins.map { $0.currentHoldingsValue }.reduce(0, +)
 					let prevPortfolioValue = coins.map { (coin) -> Double in
@@ -116,9 +105,13 @@ class HomeVM : ObservableObject {
 						return currentHoldings / (1 + percentChage) ;
 					}.reduce(0, +)
 					let portfolioPercentageChange = ((portfolioValue - prevPortfolioValue) / prevPortfolioValue) * 100
-					let portfolio = CoinStatistic (title: "Portfolio Value", value: "$0.00" , percentageChange: portfolioPercentageChange)
 					await MainActor.run {
-						self.coinStatistics.append(portfolio);
+						self.coinStatistics = [
+							CoinStatistic(title:  "Market cap", value: coinMarket.marketCap , percentageChange:  coinMarket.marketCapChangePercentage24HUsd),
+							CoinStatistic(title: "24H Volume", value: coinMarket.volume),
+							CoinStatistic(title: "Btc Dominance", value: coinMarket.btcDominance),
+							CoinStatistic (title: "Portfolio Value", value: "$0.00" , percentageChange: portfolioPercentageChange)
+						];
 					}
 					// End Portfolio
 				}
