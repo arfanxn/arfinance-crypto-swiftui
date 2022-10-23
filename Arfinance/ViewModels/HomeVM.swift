@@ -31,7 +31,7 @@ class HomeVM : ObservableObject {
 	public func updateCoinPortfolio (coin : Coin , holding : Double) {
 		self.coinPortfolioService.update(coin: coin, holding: holding)
 	}
-	
+
 	private func subscribeAndFetch () {
 		self.$keyword.combineLatest(self.coinService.$collection , self.$coinSortOption)
 			.debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
@@ -84,11 +84,11 @@ class HomeVM : ObservableObject {
 					return coin.updateHolding(amount: coinPortfolio.holding) ; // returned a portfolio coin
 				} // returned portfolio coins
 			}
-			.sink {[weak self] (coins : [Coin]) in
+			.sink {[weak self] (coins) in
 				guard let self = self else {return}
 
 				self.portfolioCoins = coins
-				
+			
 				Task{
 					if self.coinStatistics.isEmpty == false {
 						return
@@ -96,6 +96,11 @@ class HomeVM : ObservableObject {
 					guard let coinMarket = await self.coinService.fetchMarket() else {
 						return
 					}
+					
+					// Retrive the portfolio coins
+					let coins = self.portfolioCoins ;
+					
+					print(coins.count); 
 										
 					// Portfolio
 					let portfolioValue = coins.map { $0.currentHoldingValue }.reduce(0, +)
@@ -105,19 +110,19 @@ class HomeVM : ObservableObject {
 						return currentHolding / (1 + percentChage) ;
 					}.reduce(0, +)
 					let portfolioPercentageChange = ((portfolioValue - prevPortfolioValue) / prevPortfolioValue) * 100
+					// End Portfolio
+					
 					await MainActor.run {
 						self.coinStatistics = [
 							CoinStatistic(title:  "Market cap", value: coinMarket.marketCap , percentageChange:  coinMarket.marketCapChangePercentage24HUsd),
 							CoinStatistic(title: "24H Volume", value: coinMarket.volume),
 							CoinStatistic(title: "Btc Dominance", value: coinMarket.btcDominance),
-							CoinStatistic (title: "Portfolio Value", value: "$0.00" , percentageChange: portfolioPercentageChange)
+							CoinStatistic (title: "Portfolio Value", value: "$0.00" , percentageChange: portfolioPercentageChange) // Store Portfolio percentage change
 						];
 					}
-					// End Portfolio
 				}
 			}
 			.store(in: &CombineCancellable.cancellables)
-		
-		
+			
 	}
 }
