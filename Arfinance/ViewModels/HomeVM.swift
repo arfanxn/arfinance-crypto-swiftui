@@ -100,7 +100,6 @@ class HomeVM : ObservableObject {
 					// Retrive the portfolio coins
 					let coins = self.portfolioCoins ;
 					
-					print(coins.count); 
 										
 					// Portfolio
 					let portfolioValue = coins.map { $0.currentHoldingValue }.reduce(0, +)
