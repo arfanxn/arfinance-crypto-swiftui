@@ -212,6 +212,6 @@ class DummyData {
 			57336.828870254896
 		]),
 		priceChangePercentage24HInCurrency: 3952.64,
-		currentHoldings: 1.5
+		holding: 1.5
 	)
 }

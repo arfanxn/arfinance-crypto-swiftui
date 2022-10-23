@@ -9,7 +9,7 @@ import Foundation
 
 enum CoinSortOptionEnum {
 	case rankHighest , rankLowest ,
-		 holdingsHighest , holdingLowest ,
+		 holdingHighest , holdingLowest ,
 		 priceHighest , priceLowest
 }
 

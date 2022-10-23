@@ -31,7 +31,7 @@ struct EditCoinPortfolioComponent: View {
 								self.selectedCoin = coin ;
 								
 								if let portfolioCoin = self.vm.portfolioCoins.first(where: { $0.id == coin.id }),
-								   let amount = portfolioCoin.currentHoldings  {
+								   let amount = portfolioCoin.holding  {
 									self.coinQty = "\(amount)"
 								} else {
 									self.coinQty = ""
@@ -56,7 +56,7 @@ struct EditCoinPortfolioComponent: View {
 							}
 							Divider()
 							HStack{
-								Text("Current Holdings :")
+								Text("Current Holding :")
 								Text(
 									(
 										(Double(self.coinQty) ?? 0) * (coin.currentPrice)

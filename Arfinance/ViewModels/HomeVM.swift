@@ -13,7 +13,7 @@ class HomeVM : ObservableObject {
 	@Published var coinStatistics : [CoinStatistic<String>] = []
 	
 	@Published var keyword : String = "" ;
-	@Published var coinSortOption : CoinSortOptionEnum = .holdingsHighest;
+	@Published var coinSortOption : CoinSortOptionEnum = .holdingHighest;
 	
 	@Published var coins : [Coin] = [] ;
 	@Published var portfolioCoins : [Coin] = [] ;
@@ -53,15 +53,15 @@ class HomeVM : ObservableObject {
 							case .priceLowest :
 								return prev.currentPrice < next.currentPrice
 							case .holdingLowest :
-								return prev.currentHoldingsValue > next.currentHoldingsValue
-							case .holdingsHighest :
-								return prev.currentHoldingsValue < next.currentHoldingsValue
+								return prev.currentHoldingValue > next.currentHoldingValue
+							case .holdingHighest :
+								return prev.currentHoldingValue < next.currentHoldingValue
 							default :
 								return prev.rank < next.rank
 						}
 					})
 				
-				let portfolioCoins : [Coin] = coins.filter({ $0.currentHoldingsValue > 0 });
+				let portfolioCoins : [Coin] = coins.filter({ $0.currentHoldingValue > 0 });
 				
 				return (
 					coins : coins ,
@@ -81,7 +81,7 @@ class HomeVM : ObservableObject {
 					guard let coinPortfolio = coinPortfolios.first(where: {$0.coinID  == coin.id }) else {
 						return nil ;
 					};
-					return coin.updateHoldings(amount: coinPortfolio.holding) ; // returned a portfolio coin
+					return coin.updateHolding(amount: coinPortfolio.holding) ; // returned a portfolio coin
 				} // returned portfolio coins
 			}
 			.sink {[weak self] (coins : [Coin]) in
@@ -98,11 +98,11 @@ class HomeVM : ObservableObject {
 					}
 										
 					// Portfolio
-					let portfolioValue = coins.map { $0.currentHoldingsValue }.reduce(0, +)
+					let portfolioValue = coins.map { $0.currentHoldingValue }.reduce(0, +)
 					let prevPortfolioValue = coins.map { (coin) -> Double in
-						let currentHoldings = coin.currentHoldingsValue ;
+						let currentHolding = coin.currentHoldingValue ;
 						let percentChage = (Double(coin.priceChangePercentage24H ?? 0 )) / 100;
-						return currentHoldings / (1 + percentChage) ;
+						return currentHolding / (1 + percentChage) ;
 					}.reduce(0, +)
 					let portfolioPercentageChange = ((portfolioValue - prevPortfolioValue) / prevPortfolioValue) * 100
 					await MainActor.run {

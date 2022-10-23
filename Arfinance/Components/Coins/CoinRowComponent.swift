@@ -10,7 +10,7 @@ import SwiftUI
 struct CoinRowComponent: View {
 	
 	let coin : Coin;
-	var showHoldingsColumn : Bool = false;
+	var showHoldingColumn : Bool = false;
 	
 	var coinInfo : some View {
 		Group(content: {
@@ -37,11 +37,11 @@ struct CoinRowComponent: View {
 		.frame(width: UIScreen.main.bounds.width / 3.5 , alignment: .trailing)
 	}
 	
-	var coinHoldingsInfo : some View {
+	var coinHoldingInfo : some View {
 		VStack(alignment: .trailing){
-			Text(self.coin.currentHoldingsValue.asCurrencyWith2Decimals())
+			Text(self.coin.currentHoldingValue.asCurrencyWith2Decimals())
 				.bold()
-			Text((self.coin.currentHoldings ?? 0).asNumberString())
+			Text((self.coin.holding ?? 0).asNumberString())
 				.foregroundColor(.theme.accent)
 		}
 	}
@@ -52,8 +52,8 @@ struct CoinRowComponent: View {
 			
 			Spacer()
 			
-			if (self.showHoldingsColumn) {
-				self.coinHoldingsInfo
+			if (self.showHoldingColumn) {
+				self.coinHoldingInfo
 			}
 			
 			self.coinPrice
@@ -67,7 +67,7 @@ struct CoinRowComponent: View {
 
 struct CoinRowComponent_Previews: PreviewProvider {
 	static var previews: some View {
-		CoinRowComponent(coin: DummyData.coin , showHoldingsColumn: true)
+		CoinRowComponent(coin: DummyData.coin , showHoldingColumn: true)
 			.previewLayout(.sizeThatFits)
 			.preferredColorScheme(.light)
 	}

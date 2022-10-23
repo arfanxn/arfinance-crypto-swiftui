@@ -38,7 +38,7 @@ struct HomeView: View {
 					}
 					if (self.vm.showPortfolio) {
 						SortButtonComponent(title: "Holding", chevronDirection: self.$sortChevronDirection) { chevronDirection in
-							self.vm.coinSortOption = chevronDirection == .up ? .holdingsHighest : .holdingLowest ;
+							self.vm.coinSortOption = chevronDirection == .up ? .holdingHighest : .holdingLowest ;
 						}
 					}
 					Spacer()
