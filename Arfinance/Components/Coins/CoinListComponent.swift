@@ -35,7 +35,7 @@ struct CoinListComponent: View {
 					ForEach(self.coins) { coin in
 						VStack{
 							CoinLogoComponent(coin: coin)
-								.frame(width: 75)
+								.frame(width: .infinity , height: .infinity)
 								.onTapGesture {
 									withAnimation(.easeIn) {
 										self.selectedCoin = coin
@@ -55,7 +55,7 @@ struct CoinListComponent: View {
 						)
 					}
 				}
-				.frame(height: 75)
+				.frame(height: 100)
 			})
 		}
 	}

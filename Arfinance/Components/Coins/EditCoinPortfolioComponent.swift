@@ -19,7 +19,7 @@ struct EditCoinPortfolioComponent: View {
 	var body: some View {
 		NavigationView {
 			ScrollView{
-				VStack(alignment: .leading, spacing: 0){
+				VStack(alignment: .leading, spacing: 10){
 					SearchBarComponent(keyword: self.$vm.keyword)
 						.onChange(of: self.vm.keyword) { newValue in
 							self.selectedCoin = nil
@@ -123,6 +123,6 @@ struct EditCoinPortfolioComponent: View {
 
 struct EditCoinPortfolioComponent_Previews: PreviewProvider {
 	static var previews: some View {
-		Text("Hello")
+		EditCoinPortfolioComponent().environmentObject(HomeVM())
 	}
 }

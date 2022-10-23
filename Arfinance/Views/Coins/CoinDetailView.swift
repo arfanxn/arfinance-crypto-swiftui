@@ -9,16 +9,24 @@ import SwiftUI
 
 struct CoinDetailView: View {
 	
-	@StateObject var vm : CoinDetailVM ;
+	@StateObject var vm : CoinDetailVM = .init();
+	@Binding var coin : Coin? ;
 	
-	init(coin: Coin) {
-		_vm = StateObject(wrappedValue: CoinDetailVM(coin : coin))
-	}
-	
+
     var body: some View {
+		Group {
+			if self.$coin.wrappedValue != nil {
+				self.coinDetailView
+			} else {
+				EmptyView()
+			}
+		}
+    }
+	
+	var coinDetailView : some View {
 		ScrollView{
 			VStack( alignment: .leading ,spacing: 20 ){
-				Text("\(self.vm.coin.name)")
+				Text(self.coin!.name)
 					.font(.largeTitle)
 					.fontWeight(.bold)
 				
@@ -39,14 +47,16 @@ struct CoinDetailView: View {
 					pinnedViews: [],
 					content: {
 						if let overviews =  self.vm.coinOverviews {
-								ForEach(overviews) { overview in
-									CoinStatisticComponent(stat: overview )
-								}
+							ForEach(overviews) { overview in
+								CoinStatisticComponent(stat: overview )
 							}
+						}
 					}
 				)
 				.task {
-					_ = await self.vm.getCoinDetail()
+					if let coin = self.$coin.wrappedValue {
+						_ = await self.vm.getCoinDetail(coin: coin) ;
+					}
 				}
 				
 				Text("Additional details")
@@ -66,21 +76,21 @@ struct CoinDetailView: View {
 					spacing: 30,
 					pinnedViews: [],
 					content: {
-//						ForEach(self.vm.coinAdditionals) { additional in
-//							StatisticComponent(stat: additional )
-//						}
+						//						ForEach(self.vm.coinAdditionals) { additional in
+						//							StatisticComponent(stat: additional )
+						//						}
 					}
 				)
 				
 			}
 			.padding(.all)
 		}
-		.navigationTitle(self.vm.coin.name)
-    }
+		.navigationTitle(self.coin!.name)
+	}
 }
 
 struct CoinDetailView_Previews: PreviewProvider {
     static var previews: some View {
-		CoinDetailView(coin: DummyData.coin)
+		CoinDetailView(coin: .constant(DummyData.coin))
     }
 }

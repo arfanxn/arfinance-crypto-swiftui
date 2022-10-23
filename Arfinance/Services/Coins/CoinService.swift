@@ -70,7 +70,8 @@ class CoinService {
 		
 		do {
 			let (data, _) = try await URLSession.shared.data(from: url);
-			let coinDetail = try JSONDecoder().decode(CoinDetail.self, from: data);
+			var coinDetail = try JSONDecoder().decode(CoinDetail.self, from: data);
+			coinDetail.coin = coin ;
 			return coinDetail ;
 		} catch {
 			print(error.localizedDescription)

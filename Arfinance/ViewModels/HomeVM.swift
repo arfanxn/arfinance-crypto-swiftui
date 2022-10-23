@@ -89,8 +89,6 @@ class HomeVM : ObservableObject {
 
 				self.portfolioCoins = coins
 				
-				print(coins)
-				
 				Task{
 					if self.coinStatistics.isEmpty == false {
 						return
