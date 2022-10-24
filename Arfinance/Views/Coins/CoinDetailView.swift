@@ -12,8 +12,8 @@ struct CoinDetailView: View {
 	@StateObject var vm : CoinDetailVM = .init();
 	@Binding var coin : Coin? ;
 	
-
-    var body: some View {
+	
+	var body: some View {
 		Group {
 			if self.$coin.wrappedValue != nil {
 				self.coinDetailView
@@ -21,7 +21,7 @@ struct CoinDetailView: View {
 				EmptyView()
 			}
 		}
-    }
+	}
 	
 	var coinDetailView : some View {
 		ScrollView{
@@ -76,9 +76,9 @@ struct CoinDetailView: View {
 					spacing: 30,
 					pinnedViews: [],
 					content: {
-						//						ForEach(self.vm.coinAdditionals) { additional in
-						//							StatisticComponent(stat: additional )
-						//						}
+						ForEach(self.vm.coinAdditionals) { additional in
+							CoinStatisticComponent(stat: additional )
+						}
 					}
 				)
 				
@@ -90,7 +90,7 @@ struct CoinDetailView: View {
 }
 
 struct CoinDetailView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		CoinDetailView(coin: .constant(DummyData.coin))
-    }
+	}
 }

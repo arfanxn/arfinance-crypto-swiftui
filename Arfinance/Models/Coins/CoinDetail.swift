@@ -148,5 +148,28 @@ struct CoinDetail: Codable {
 			CoinStatistic(title: "Volume", value: "\(coin.totalVolume ?? 0)"),
 		]
 	}
+	
+	public func getAddtionals () -> [CoinStatistic<String>] {
+		guard let coin = self.coin else {return []}
+		
+		return [
+			CoinStatistic(title: "24H High",
+						  value: coin.high24H?.asCurrencyWith6Decimals() ?? "n/a"),
+			CoinStatistic(title: "24H Low",
+						  value: coin.low24H?.asCurrencyWith6Decimals() ?? "n/a"),
+			CoinStatistic(title: "24H Price Change ",
+						  value: coin.priceChange24H?.asCurrencyWith6Decimals() ?? "n/a" ,
+						  percentageChange:  coin.priceChangePercentage24H),
+			CoinStatistic(
+				title: "24H Market Cap Change" ,
+				value: "$" + (coin.marketCapChange24H?.formattedWithAbbreviations() ?? "") ,
+				percentageChange: coin.marketCapChangePercentage24H
+			),
+			CoinStatistic(title: "Block Time",
+						  value: "\(self.blockTimeInMinutes ?? 0)"),
+			CoinStatistic(title: "Hashing Algorithm", value: self.hashingAlgorithm ?? "n/a" )
+
+		]
+	}
 }
 

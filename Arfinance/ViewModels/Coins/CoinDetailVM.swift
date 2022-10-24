@@ -11,6 +11,7 @@ class CoinDetailVM : ObservableObject {
 	
 	@Published var coinDetail : CoinDetail? = nil
 	@Published var coinOverviews : [CoinStatistic<String>] = [] ;
+	@Published var coinAdditionals : [CoinStatistic<String>] = [] ;
 
 	public func getCoinDetail (coin : Coin) async -> CoinDetail? {
 		if self.coinDetail != nil {
@@ -20,7 +21,7 @@ class CoinDetailVM : ObservableObject {
 		guard let coinDetail = await CoinService.init().fetchDetail(coin:coin) else {return nil}
 		await MainActor.run(body: {
 		self.coinDetail = coinDetail ;
-		self.coinOverviews = coinDetail.getOverviews() ;
+		self.coinAdditionals = coinDetail.getAddtionals() ;
 		})
 		
 		return coinDetail
