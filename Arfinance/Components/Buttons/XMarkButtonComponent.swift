@@ -10,9 +10,14 @@ import SwiftUI
 struct XButtonComponent: View {
 	@Environment(\.presentationMode) var presentationMode ;
 	
+	var onClick : (()->())? = nil
+	
 	var body: some View {
 		Button(action: {
 			self.presentationMode.wrappedValue.dismiss()
+			
+			// call the onClick event if not nil
+			self.onClick?()
 		}, label: {
 			Image(systemName: "xmark")
 				.font(.headline)
