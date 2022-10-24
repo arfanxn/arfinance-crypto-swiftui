@@ -14,21 +14,18 @@ struct CoinDetailView: View {
 	
 	
 	var body: some View {
-		Group {
+		NavigationView(content: {
 			if self.$coin.wrappedValue != nil {
 				self.coinDetailView
 			} else {
 				EmptyView()
 			}
-		}
+		})
 	}
 	
 	var coinDetailView : some View {
 		ScrollView{
 			VStack( alignment: .leading ,spacing: 20 ){
-				Text(self.coin!.name)
-					.font(.largeTitle)
-					.fontWeight(.bold)
 				
 				Text("Overviews")
 					.font(.title)
@@ -87,7 +84,21 @@ struct CoinDetailView: View {
 			}
 			.padding(.all)
 		}
-		.navigationTitle(self.coin!.name)
+		.navigationBarTitle(self.coin!.name)
+		.toolbar {
+			ToolbarItem(placement: .navigationBarLeading) {
+				XButtonComponent()
+			}
+			ToolbarItem(placement: .navigationBarTrailing) {
+				HStack{
+					Text(self.coin!.symbol.uppercased())
+						.font(.headline)
+						.foregroundColor(.theme.secondaryText)
+					CoinLogoComponent(coin: self.coin!)
+						.frame(width: 25 , height: 25)
+				}
+			}
+		}
 	}
 }
 
