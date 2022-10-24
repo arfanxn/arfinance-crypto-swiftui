@@ -131,9 +131,8 @@ struct CoinDetail: Codable {
 		return description?.en?.removingHTMLOccurances
 	}
 	
-	public func getOverviews () -> [CoinStatistic<String>] {
+	var overviews : [CoinStatistic<String>] {
 		guard let coin = self.coin else {return []}
-		
 		
 		return [
 			CoinStatistic(
@@ -142,14 +141,14 @@ struct CoinDetail: Codable {
 				percentageChange: coin.priceChange24H),
 			CoinStatistic(
 				title: "Market Capitalization",
-				value: "\(coin.marketCap ?? 0)",
+				value: (coin.marketCap != nil) ? "\(coin.marketCap!)" : "n/a",
 				percentageChange: coin.marketCapChange24H) ,
 			CoinStatistic(title: "Rank", value: "\(coin.rank)"),
-			CoinStatistic(title: "Volume", value: "\(coin.totalVolume ?? 0)"),
+			CoinStatistic(title: "Volume", value: (coin.totalVolume != nil) ? "\(coin.totalVolume!)" : "n/a" ) ,
 		]
 	}
 	
-	public func getAddtionals () -> [CoinStatistic<String>] {
+	var addtionals : [CoinStatistic<String>] {
 		guard let coin = self.coin else {return []}
 		
 		return [
@@ -162,13 +161,13 @@ struct CoinDetail: Codable {
 						  percentageChange:  coin.priceChangePercentage24H),
 			CoinStatistic(
 				title: "24H Market Cap Change" ,
-				value: "$" + (coin.marketCapChange24H?.formattedWithAbbreviations() ?? "") ,
+				value: (coin.marketCapChange24H != nil) ? "$\(coin.marketCapChange24H!.formattedWithAbbreviations())" : "n/a" ,
 				percentageChange: coin.marketCapChangePercentage24H
 			),
 			CoinStatistic(title: "Block Time",
-						  value: "\(self.blockTimeInMinutes ?? 0)"),
+						  value: (self.blockTimeInMinutes != nil) ? "\(self.blockTimeInMinutes!)" : "n/a" ),
 			CoinStatistic(title: "Hashing Algorithm", value: self.hashingAlgorithm ?? "n/a" )
-
+			
 		]
 	}
 }

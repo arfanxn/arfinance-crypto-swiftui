@@ -46,7 +46,7 @@ struct CoinDetailView: View {
 					spacing: 30,
 					pinnedViews: [],
 					content: {
-						if let overviews =  self.vm.coinOverviews {
+						if let overviews =  self.vm.coinDetail?.overviews {
 							ForEach(overviews) { overview in
 								CoinStatisticComponent(stat: overview )
 							}
@@ -76,8 +76,10 @@ struct CoinDetailView: View {
 					spacing: 30,
 					pinnedViews: [],
 					content: {
-						ForEach(self.vm.coinAdditionals) { additional in
-							CoinStatisticComponent(stat: additional )
+						if let addtionals = self.vm.coinDetail?.addtionals {
+							ForEach(addtionals) { additional in
+								CoinStatisticComponent(stat: additional )
+							}
 						}
 					}
 				)
