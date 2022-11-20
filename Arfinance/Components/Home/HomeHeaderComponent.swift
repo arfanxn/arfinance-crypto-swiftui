@@ -14,11 +14,16 @@ struct HomeHeaderComponent: View {
 		HStack{
 			CircleButtonComponent(iconName: self.vm.showPortfolio ? "plus" : "info" , animate: self.$vm.showPortfolio)
 				.sheet(isPresented: self.$vm.showPortfolioSheet, content: {
-					EditCoinPortfolioComponent()
+						EditCoinPortfolioComponent()
+				})
+				.sheet(isPresented: self.$vm.showAboutSheet, content: {
+						AboutView()
 				})
 				.onTapGesture {
 					if (self.vm.showPortfolio) {
 						self.vm.showPortfolioSheet.toggle()
+					} else {
+						self.vm.showAboutSheet.toggle()
 					}
 				}
 			Spacer()

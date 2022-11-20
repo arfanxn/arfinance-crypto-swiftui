@@ -11,8 +11,8 @@ struct HomeView: View {
 	
 	@EnvironmentObject private var vm : HomeVM ;
 	
-	@State private var showPortfolio: Bool = false // animate right
-	@State private var showPortfolioSheet: Bool = false // new sheet
+//	@State private var showPortfolio: Bool = false // animate right
+//	@State private var showPortfolioSheet: Bool = false // new sheet
 	@State private var showCoinDetail : Bool = false ;
 	@State private var selectedCoin : Coin? = nil ;
 	
@@ -51,13 +51,29 @@ struct HomeView: View {
 				.padding(.horizontal)
 				
 				Group{
-					if !self.vm.showPortfolio {
-						CoinListComponent(coins: self.$vm.coins) { coin in
-							self.selectedCoin = coin ;
-							self.showCoinDetail.toggle();
+					if self.vm.showPortfolio {
+						if (self.vm.portfolioCoins.isEmpty && !self.vm.keyword.isEmpty) {
+							Text("No results for \"\(self.vm.keyword)\"")
+								.font(.callout)
+								.foregroundColor(.theme.accent)
+								.fontWeight(.medium)
+								.multilineTextAlignment(.center)
+								.padding(50)
+						} else if (self.vm.portfolioCoins.isEmpty) {
+							Text("You haven't added any coin to your portflio")
+								.font(.callout)
+								.foregroundColor(.theme.accent)
+								.fontWeight(.medium)
+								.multilineTextAlignment(.center)
+								.padding(50)
+						} else {
+							CoinListComponent(coins: self.$vm.portfolioCoins, showHoldingColumn : true) { coin in
+								self.selectedCoin = coin ;
+								self.showCoinDetail.toggle();
+							}
 						}
 					} else {
-						CoinListComponent(coins: self.$vm.portfolioCoins, showHoldingColumn : true) { coin in
+						CoinListComponent(coins: self.$vm.coins) { coin in
 							self.selectedCoin = coin ;
 							self.showCoinDetail.toggle();
 						}

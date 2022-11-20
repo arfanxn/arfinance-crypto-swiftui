@@ -8,5 +8,5 @@
 import Foundation
 
 enum AppMenuEnum {
-	case home , portfolio , updatePortfolio;
+	case home , about , coinDetail , coinPortfolio , updateCoinPortfolio;
 }

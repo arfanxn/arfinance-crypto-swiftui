@@ -18,6 +18,8 @@ class HomeVM : ObservableObject {
 	@Published var coins : [Coin] = [] ;
 	@Published var portfolioCoins : [Coin] = [] ;
 	
+	@Published var showAbout = false ;
+	@Published var showAboutSheet = false ;
 	@Published var showPortfolio = false ;
 	@Published var showPortfolioSheet = false ;
 	

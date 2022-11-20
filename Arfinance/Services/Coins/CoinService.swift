@@ -26,7 +26,9 @@ class CoinService {
 		guard let url = URL(string: API.Coin.data) else {return}
 		
 		self.subcriptions.coin = NetworkManager.request(url: url)
+			.retry(3)
 			.decode(type: [Coin].self, decoder: JSONDecoder())
+			.receive(on: DispatchQueue.main)
 			.sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: {[weak self] (coins : [Coin]) in
 				guard let self = self else {return};
 				self.collection = coins;
